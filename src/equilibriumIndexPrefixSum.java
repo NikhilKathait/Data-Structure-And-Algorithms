@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class equilibriumIndexOfArray {
+public class equilibriumIndexPrefixSum {
     public int solve(ArrayList<Integer> A) {
         long totalsum = 0;
 
