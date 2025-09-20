@@ -1,0 +1,24 @@
+public class firstMissingInteger {
+    public int firstMissingPositive(int[] A) {
+        int N = A.length;
+
+        for(int i = 0; i<N; i++) {
+            if(A[i] <= 0) A[i] = N + 2;
+        }
+
+        for(int i = 0; i<N; i++) {
+            int ele = Math.abs(A[i]);
+
+            if(ele <= N) {
+                int idx = ele - 1;
+                A[idx] = -1 * Math.abs(A[idx]);
+            }
+        }
+
+        for(int i = 0; i<N; i++) {
+            if(A[i] > 0) return i+1;
+        }
+
+        return N+1;
+    }
+}
